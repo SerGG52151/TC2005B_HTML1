@@ -1,0 +1,27 @@
+p {
+    color:red; font-family: Verdana;
+} /*Affects all paragraphs*/
+
+#miparrafo {
+    color:green; font-family: "WingDings" !important;
+} /*Affects those with a #miparrafo id*/
+
+li > a {
+    color:rgb(110, 182, 161);
+} /*Links inside a list (li)*/
+
+@keyframes test {
+    from {color: red;}
+    to {color: blue;}
+}
+
+li > a:hover {
+    color:blueviolet;
+    animation-name: test;
+    animation-duration: 1s;
+}
+
+.clase1:hover {
+    color: violet; 
+    cursor: cell;
+}
