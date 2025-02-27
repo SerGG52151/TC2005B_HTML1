@@ -5,15 +5,22 @@ const password = document.getElementById("password");
 correctUsername = "admin";
 correctPassword = "admin";
 
-function log(username, password){
+function login(username, password){
     if(username == "admin" && password == "admin"){
-        window.location.href = "../index.html";
+        sessionStorage.setItem("name", "Sergio G.");
         alert("Login Successful");
+        window.location.href = "../index.html";
     } else {
         alert("Login Failed");
     }
 }
 
 btnLogin.addEventListener("click", function() {
-    log(username.value, password.value);
+    login(username.value, password.value);
+});
+
+password.addEventListener("keydown", (e) => {
+    if(e.key == "Enter"){
+        login(username.value, password.value);
+    }
 });
