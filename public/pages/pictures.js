@@ -1,9 +1,9 @@
 window.onload = () => {
-    if(!sessionStorage.name){
+    if(!sessionStorage.username){
         window.location = "home.html";
     } else {
         const h1 = document.getElementById("h1");
-        alert("hola" + " " + sessionStorage.name);
+        alert("hola" + " " + sessionStorage.username);
     }
    
 };

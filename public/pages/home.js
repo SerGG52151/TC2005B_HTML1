@@ -4,8 +4,8 @@ const password = document.getElementById("password");
 
 const url = "http://localhost:5000";
 
-correctUsername = "admin";
-correctPassword = "admin";
+//correctUsername = "admin";
+//correctPassword = "admin";
 
 const login = async () => {
     const user = { username: username.value, password: password.value };
@@ -16,10 +16,10 @@ const login = async () => {
     });
     const data = await respuesta.json();
     if(data.isLogin){
-        sessionStorage.setItem("id", data.user.id);
-        sessionStorage.setItem("name", data.user.name);
+        sessionStorage.setItem("user_id", data.user.user_id);
+        sessionStorage.setItem("username", data.user.username);
         alert("Login Successful");
-        window.location.href = "../index.html?id=" + data.user.id;
+        window.location.href = "../index.html?user_id=" + data.user.user_id;
     } else {
         alert("Login Failed");
     }

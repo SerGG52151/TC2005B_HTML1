@@ -1,18 +1,23 @@
 window.onload = () => {
-    if(!sessionStorage.name){
-        window.location = "./pages/home.html";
+    if(!sessionStorage.username){
+        window.location = LOGIN_PAGE;
     } else {
         const h1 = document.getElementById("h1");
-        alert("hola" + " " + sessionStorage.name);
+        alert("Hola" + " " + sessionStorage.username);
+
+        const juego = document.getElementById("juego");
+        juego.setAttribute("src", "./pages/game/index.html?user_id=" + sessionStorage.user_id);
     }
    
 };
 
-function logout(){
+function logout() {
     sessionStorage.clear();
-    window.location = "./pages/home.html";
+    redirectTo(LOGIN_PAGE);
 }
 
-btnLogout.addEventListener("click", function() {
-    logout();
-});
+const btnLogout = document.getElementById("btnLogout");
+btnLogout.addEventListener("click", logout);
+console.error("Element with id 'btnLogout' not found.");
+
+const LOGIN_PAGE = "./pages/home.html";
